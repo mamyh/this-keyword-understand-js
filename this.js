@@ -53,3 +53,18 @@ var person = function (name, age) {
 }
 var musfiq = person('mushfiq', 34);
 musfiq.father.printName();
+
+//explicit binding: use a function from different context.call a function with different objects or context
+var printNameWithVertue = function (v1, v2) {
+    console.log(`${this.name} is ${v2} and ${v1} `);
+}
+var oneMane = {
+    name: 'jani na ',
+    age: 45
+}
+var v1 = "handsome";
+var v2 = "characterless";
+//printNameWithVertue.call(oneMane, v1, v2); will call the function immediately with thisObjec and these parameter
+//printNameWithVertue.apply(oneMane, [v1, v2]); will call the funtion immediately with thisobject and these array values
+var newfunction = printNameWithVertue.bind(oneMane, v1, v2); //will not call the funciton immediately but return a new function instance;
+newfunction();
