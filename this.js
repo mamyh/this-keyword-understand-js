@@ -79,3 +79,13 @@ function AnyName(name, age) {
 }
 
 var johirul = new AnyName('johirul', 34);
+
+//window binding .when above three bindings will not work by default window binding is working.
+var windfunc = function () {
+    console.log(this)
+    console.log(this.name) //undefined;
+}
+var amr = {
+    name: 'ami',
+}
+windfunc();
