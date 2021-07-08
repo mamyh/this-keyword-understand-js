@@ -68,3 +68,14 @@ var v2 = "characterless";
 //printNameWithVertue.apply(oneMane, [v1, v2]); will call the funtion immediately with thisobject and these array values
 var newfunction = printNameWithVertue.bind(oneMane, v1, v2); //will not call the funciton immediately but return a new function instance;
 newfunction();
+
+//new binding
+function AnyName(name, age) {
+    //let this=Object.create(null);
+    this.name = name;
+    this.age = age;
+    console.log(this.name + ' is new binding');
+    //return this
+}
+
+var johirul = new AnyName('johirul', 34);
